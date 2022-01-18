@@ -5,6 +5,7 @@ from django.contrib import auth, messages
 from receitas.models import Receita
 
 def cadastro(request):
+    """Cadastra uma nova pessoa no sisetema"""
     if request.method == 'POST':
         nome = request.POST['nome']
         email = request.POST['email']
@@ -34,6 +35,7 @@ def cadastro(request):
         return render(request, 'usuarios/cadastro.html')
 
 def login(request):
+    """Realiza o login do usuário no sistema"""
     if request.method == 'POST':
         email = request.POST['email']
         senha = request.POST['senha']
@@ -63,7 +65,6 @@ def dashboard(request):
         return render(request, 'usuarios/dashboard.html',dados)
     else:
         return redirect('index')
-
 
 def campo_vazio(campo):
     return not campo.strip()
