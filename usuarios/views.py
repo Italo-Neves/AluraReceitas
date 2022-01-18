@@ -1,5 +1,4 @@
 from re import I, S
-import re
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.models import User
 from django.contrib import auth, messages
@@ -64,6 +63,7 @@ def dashboard(request):
         return render(request, 'usuarios/dashboard.html',dados)
     else:
         return redirect('index')
+
 
 def campo_vazio(campo):
     return not campo.strip()
