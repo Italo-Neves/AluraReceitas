@@ -7,7 +7,6 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pessoas', '0001_initial'),
         ('receitas', '0001_initial'),
     ]
 
@@ -15,7 +14,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='receita',
             name='pesso',
-            field=models.ForeignKey(default='', on_delete=django.db.models.deletion.CASCADE, to='pessoas.pessoa'),
-            preserve_default=False,
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='auth.user'),
         ),
     ]
